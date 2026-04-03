@@ -1,0 +1,175 @@
+/* Global Styles */
+* {
+  font-size: 1.5vw;
+  font-family: "Epilogue", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  --scrollbarBG: #fff;
+  --thumbBG: #90a4ae;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background: #e5ddd5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Card Container */
+.card {
+  width: 100%;
+  max-width: 420px;
+  height: 90vh;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 2vw 2vw 12vw 3vw #ccc;
+  border-radius: 10px;
+}
+
+/* Header */
+/*#header {
+  height: 4vh;
+  background: #075e54;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 2vw;
+  font-family: "Finger Paint", cursive;
+  font-weight: bold;
+}*/
+
+/* Message Section */
+#message-section {
+  flex-grow: 1;
+  padding: 1vw 3%;
+  overflow-y: auto;
+  background: #efeae2;
+  scrollbar-width: thin;
+  scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+  display: flex;
+  flex-direction: column;
+}
+
+#message-section::-webkit-scrollbar {
+  width: 10px;
+}
+
+#message-section::-webkit-scrollbar-track {
+  background: var(--scrollbarBG);
+}
+
+#message-section::-webkit-scrollbar-thumb {
+  background-color: var(--thumbBG);
+  border-radius: 6px;
+  border: 3px solid var(--scrollbarBG);
+}
+
+/* Message Bubbles */
+.message {
+  padding: 1vw 2vw;
+  max-width: 75%;
+  border-radius: 10px;
+  margin: 0.5vw 0;
+  word-wrap: break-word;
+  font-size: 1.2vw;
+  position: relative;
+  border: 1px solid #777;
+}
+
+/* Alternating Messages */
+.message:nth-child(odd) {
+  align-self: flex-end;
+  background: #dcf8c6;
+  border-radius: 10px 10px 0 10px;
+  border: 1px solid #000;
+  color: #000;
+}
+
+.message:nth-child(even) {
+  align-self: flex-start;
+  background: #fff;
+  border-radius: 10px 10px 10px 0;
+  border: 1px solid #777;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+/* Adding Leaf Decorations Around Bot Messages */
+.message:nth-child(even)::before, .message:nth-child(even)::after {
+  content: "🌿🌱";
+  position: absolute;
+  font-size: 1vw;
+}
+
+.message:nth-child(even)::before {
+  top: -2vw;
+  left: -3vw;
+}
+
+.message:nth-child(even)::after {
+  bottom: -2vw;
+  right: -3vw;
+}
+
+/* Input Section */
+#input-section {
+  height: 10vh;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  padding: 2%;
+  border-top: 1px solid #ccc;
+  position: relative;
+}
+
+#input-section::before {
+  content: "🌺🌸🌼";
+  position: absolute;
+  top: -1.5vw;
+  left: 2vw;
+  font-size: 2.5vw;
+}
+
+input {
+  flex-grow: 1;
+  height: 3vw;
+  border: none;
+  padding: 1vw;
+  font-size: 1.2vw;
+  outline: none;
+  background: #f8f8f8;
+  border-radius: 1vw;
+}
+
+/* Send Button */
+.send {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  margin-left: 3%;
+  font-size: 2vw;
+  position: relative;
+
+}
+
+.send .circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border-radius: 50%;
+}
+
+.send .circle::before {
+  content: "🌺";
+  font-size: 2.5vw;
+}
+
