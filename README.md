@@ -1,10 +1,16 @@
-# plantie
+# Plantie
 
-`plantie` is an Android WebView application that packages a local HTML, CSS, and JavaScript chatbot-style interface.
+A lightweight Android WebView app that wraps a bundled chatbot-style web interface inside a native mobile shell.
 
-## Overview
+## Why It Stands Out
 
-The Android shell loads bundled web assets from the app package and presents them inside a native WebView.
+`plantie` is small, but it has charm: it takes a local HTML, CSS, and JavaScript experience and turns it into something that feels app-like on Android without needing a backend.
+
+## What It Does
+
+- loads local web assets through Android WebView
+- packages the chat UI as an installable Android project
+- keeps interaction self-contained inside the app
 
 ## Project Structure
 
@@ -27,13 +33,13 @@ plantie/
 
 ## Installation
 
-Open the project in Android Studio and let Gradle sync, or build from the command line:
+Open the project in Android Studio and let Gradle sync, or build with:
 
 ```bash
 gradlew.bat assembleDebug
 ```
 
-## Running The Project
+## Run Locally
 
 Install the debug build on a device or emulator:
 
@@ -41,10 +47,12 @@ Install the debug build on a device or emulator:
 gradlew.bat installDebug
 ```
 
-Then launch the app from the device.
-
 ## How It Works
 
-- `MainActivity.java` loads `file:///android_asset/index.html`.
-- `assets/index.html`, `style.css`, and `script.js` define the chatbot UI and behavior.
-- Android resources under `res/` provide the native wrapper styling and launcher assets.
+- `MainActivity.java` opens `file:///android_asset/index.html` inside a WebView.
+- `assets/` contains the actual chatbot page, styling, and script logic.
+- Android resources in `res/` provide the surrounding mobile shell.
+
+## Best Fit
+
+This project is great when you want to package a web interaction as a quick Android app without rebuilding the experience natively.
